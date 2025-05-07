@@ -412,7 +412,7 @@ jobs:
       - name: terraform destroy
         working-directory: ${{ inputs.directory }}/
         id: tfdestroy
-        if: steps.tfapply.outcome == 'failure
+        if: steps.tfapply.outcome == 'failure'
         env:
           TF_VAR_sdv_gh_access_token: ${{ steps.get_github_app_token.outputs.token }}
           TF_VAR_sdv_gh_repo_name: ${{ github.event.repository.full_name }}
